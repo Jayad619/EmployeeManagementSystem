@@ -6,14 +6,14 @@ USE employeesdb;
 -- table1
 CREATE TABLE department
 (
-    id INT PRIMARY KEY,
+    id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(30)
 );
 
 -- table2
 CREATE TABLE role
 (
-    id INT PRIMARY KEY,
+    id INT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(30),
     salary DECIMAL,
     departmentid INT,
@@ -24,7 +24,7 @@ CREATE TABLE role
 -- table3
 CREATE TABLE employee
 (
-    id INT PRIMARY KEY,
+    id INT AUTO_INCREMENT PRIMARY KEY,
     firstname VARCHAR(30),
     lastname VARCHAR(30),
     roleid INT,
