@@ -170,7 +170,7 @@ function addEmployee() {
   db.query("SELECT * FROM role", (err, res) => {
     if (err) throw err;
 
-    addNewRoles = res.map((role) => {
+    addNewRole = res.map((role) => {
       return {
         name: role.title,
         value: role.id,
@@ -194,7 +194,7 @@ function addEmployee() {
           type: "list",
           name: "role_id",
           message: "Please select the role of the new employee?",
-          choices: addNewRoles,
+          choices: addNewRole,
         },
         {
           type: "input",
@@ -205,7 +205,7 @@ function addEmployee() {
       .then((answers) => {
         db.query(
           "INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUES (?, ?, ?, ?)",
-          [answers.first_name, answers.last_name, role_id, manager],
+          [answers.first_name, answers.last_name, answers.role_id, answers.manager],
           (err, res) => {
             if (err) throw err;
 
@@ -264,7 +264,7 @@ function updateEmployeeRole() {
             (err, res) => {
               if (err) throw err;
 
-              console.log('Employee role updated!');
+              console.log('Employee role updated');
             }
           );
         })
