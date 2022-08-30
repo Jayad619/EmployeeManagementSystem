@@ -1,5 +1,5 @@
 const { prompt } = require("inquirer");
-const db = require("./db/connections");
+const db = require("./database/connections");
 require("console.table");
 
 function letsStart() {
