@@ -106,7 +106,7 @@ function addDepartment() {
       [answer],
       (err, res) => {
         if (err) throw err;
-        console.table(res);
+        // console.table(res);
       }
     );
     letsStart();
@@ -162,6 +162,7 @@ function addRole(departmentID, departmentName) {
       console.log('Role has been added')
     }
     );
+    letsStart();
   });
 }  
 function addEmployee() {
@@ -212,6 +213,7 @@ function addEmployee() {
             console.log('Added a new employee!');
           }
         );
+        letsStart();
       });
   });
 }
@@ -265,6 +267,7 @@ function updateEmployeeRole() {
               if (err) throw err;
 
               console.log('Employee role updated');
+              letsStart();
             }
           );
         })
